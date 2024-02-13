@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sobre Nosotros</title>
+    <style>
+   * {
+   font-family:'sen', sans-serif;
+   font-weight:100 ;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+  header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: rgb(110, 69, 145)
+  }
+ body{
+    background-color: rgb(112, 62, 153);
+    background-size: cover;
+ }
+ .boton{
+  display: none;
+ }
+ 
+.nav-list{
+  list-style-type:none ;
+  display: flex;
+  gap:1rem ;
+}
+
+.nav__li:hover {
+    color: #000000;
+}
+
+.nav__li:hover a{
+  color: #ffaf04;
+
+}.nav__li a{
+  color: #ffc400;
+  text-decoration: none;
+}
+.boton,
+.cerrar{
+  display: none;
+}
+
+@media screen and (max-width:550px) {
+  .boton,
+  .cerrar{
+   display: block;
+   border: 0;
+   font-size: 20px;
+   background: transparent;
+   cursor: pointer;
+  }
+  .nav{
+    opacity: 0;
+    visibility: hidden;
+  }
+  .nav{
+    display: flex;
+    flex-direction:column ;
+    align-items: end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(110, 69, 145);
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    gap:1rem;
+  }
+  .nav.visible{
+    opacity: 1;
+    visibility: visible;
+
+  }
+  .nav-list{
+    flex-direction: column;
+    align-items: end;
+  }
+  .nav-list li a{
+    color: #ffc400;
+
+  }
+  
+}
+h1{
+    justify-content: center;
+    padding: 3px 38px 3px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="logo.jpg" alt="logo" height="100px" width="100px"></a>
+        <button id="abrir" class="boton"><i class="bi bi-list"></i></button>
+         <nav class="nav" id="nav">
+          <button id="cerrar" class="cerrar"><i class="bi bi-x-lg"></i></button>
+          <ul class="nav-list">
+                  <li class="nav__li"><i class="fas fa-user-friends"></i><a href="#">Sobre Nosotros</a></li>
+                  <li class="nav__li"><i class="fas fa-dollar-sign"></i><a href="#"></a></li>
+                  <li class="nav__li"><i class="fas fa-question-circle"></i><a href="#"></a></li>
+          </ul>
+         </nav>
+         <script>
+          const nav = document.querySelector("#nav");
+          const abrir = document.querySelector("#abrir");
+          const cerrar = document.querySelector("#cerrar");
+          
+          abrir.addEventListener("click", () => {
+              nav.classList.add("visible");
+          })
+          
+          cerrar.addEventListener("click", () => {
+              nav.classList.remove("visible");
+          })</script>
+      </header>
+        <h1>
+            Hola soy Agustina Peloso, tengo 15 años y me dedico al crochet desde el año ...., mi sueño es ser bailarina del bailando y entrar a GH, en mis tiempos libres aparte de tejer, salvo al mundo de las cucarachas.
+        </h1>
+</body>
+</html>
