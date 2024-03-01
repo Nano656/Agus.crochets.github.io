@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<title>Sobre Nosotros</title>
+    <style>
+   * {
+   font-family:'sen', sans-serif;
+   font-weight:100 ;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   list-style: none;
+ }
+  header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: rgb(110, 69, 145)
+  }
+ body{
+    background-color: rgb(112, 62, 153);
+    background-size: cover;
+    display: flex;
+    flex-direction:column ;
+    min-height: 100vh;
+ }
+ .boton{
+  display: none;
+ }
+ 
+.nav-list{
+  list-style-type:none ;
+  display: flex;
+  gap:1.8rem ;
+}
+
+.nav__li:hover {
+    color: #000000;
+}
+
+.nav__li:hover a{
+  color: #ffaf04;
+
+}.nav__li a{
+  color: #ffc400;
+  text-decoration: none;
+}
+.boton,
+.cerrar{
+  display: none;
+}
+.jeje, #desplegar{
+ display: none;
+ background-color: none;
+ border: none;
+ height: 20px;
+}
+.jeje{
+  background-color: #ffaf04;
+}
+#menu-horizontal{
+  display: none; 
+}
+@media screen and (max-width:1920px)  {
+  .nav{
+  display: inline-flex;
+  position: relative;
+  right: 800px;
+  font-size: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+}
+@media screen and (min-width:0px) {
+.nav{
+  display: inline-flex;
+  position: relative;
+  right:70vh;
+  padding: 0px 0px 0px;
+  font-size: 20px;
+  overflow: hidden;
+}
+}
+
+@media screen and (max-width:1000px) {
+  .boton,
+  .cerrar{
+   display: block;
+   border: 0;
+   font-size: 20px;
+   background: transparent;
+   cursor: pointer;
+  }
+  .jeje, #desplegar li:hover #menu-horizontal{
+ background-color: rgb(110, 69, 145);
+ border: 0;
+ height: 10px;
+ padding-right: 6px;
+ padding-top:15px ;
+ padding-left:17px; 
+ width: 120px;
+ display: flex;
+ cursor: pointer;
+ font-size: 19px;
+}
+#menu-vertical{
+            list-style: none;
+            display: list-item;
+            justify-content: space-around;
+           padding: 0 px;
+        }
+#menu-vertical > li > a{
+        display: block;
+        padding: 15px 20px;
+        color: #fff;
+        text-decoration: none;
+     }
+#menu-vertical >li:hover{
+    background-color: red;
+     }
+#menu-horizontal{
+        position: absolute;
+        display: none;
+        list-style: none;
+        width: 200px;
+        background-color: rgb(110, 69, 145);
+        padding-left: 87px;
+     }
+#menu-vertical li:hover #menu-horizontal{
+        display: block;
+        right: 1rem;
+     }
+.jeje:hover #menu-horizontal  {
+  background-color: rgb(110, 69, 145); 
+  display: flex;
+}
+  .nav{
+    opacity: 0;
+    visibility: hidden;
+  }
+  .nav{
+    display: flex;
+    flex-direction:column ;
+    align-items: end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(110, 69, 145);
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    gap:1rem;
+    font-size: 20px;
+  }
+  .nav.visible{
+    opacity: 1;
+    visibility: visible;
+
+  }
+  .nav-list{
+    flex-direction: column;
+    align-items: end;
+    left: 2px;
+  }
+  .nav-list li a{
+    color: #ffc400;
+  }  
+  #lolo {
+    padding-right: 0px;
+    box-sizing: border-box;
+      display: inline-block;
+      position: inherit;
+    color: #000;
+    text-decoration: underline 2px rgb(161, 25, 214);
+    font-size: 18px;
+    width: max-content;
+  }
+  
+  body{
+    overflow: none;
+    width: 100%;
+  }   
+}
+h1{
+  width:100%;
+    height: 0px;
+    padding: 0px 0px 0px 330px;
+    float: left;
+}
+  .hehe{
+    display: none;
+  }
+  ul a, h3, h4{
+    text-align: start;
+    text-decoration: none;
+    color: #000;
+    display: grid;
+  }
+  h3{
+    border-bottom: solid 2px #ffaf04;
+    font-size: 20px;
+    height: 26px; 
+
+  }
+  footer{
+    height: 100%;
+    width: 100%;
+   margin-top: auto;
+    text-align: center;
+    padding: 4px 0;
+    bottom: 0;
+    background-color: rebeccapurple;
+  }
+ 
+  .contacto{
+    padding-left: 10px;
+    display: column;
+  }
+  .footer-row{
+    display: flex;
+    color: red;
+    flex-wrap: wrap;
+  }
+  .contenido{
+    width: 150px;
+    padding: 10px 5px 0px 0px; 
+    display: flex;
+    gap: 20px;    
+  }
+  .contenido h4{
+    font-size: 20px;
+    border-bottom: 2px solid #ffaf04;
+  }
+  .numero{
+    display:flex;
+    width: 200%; 
+  }
+  .telefono{
+    display: flex;
+    align-items: center;
+    }
+    #iconos{
+      font-size: 20px;
+    }
+.aside{
+  display:inline-flex;
+  width: 300px;
+  height: 730px;
+  padding-left: 10px;
+  bottom: 0; 
+}
+
+.aside img{
+  display: inline-flex;
+  border-radius: 0;
+  width: 100%;
+  height: 100;
+  padding-left: 0px;
+  bottom: 0;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+      <a href="index.html"><img src="logo.jpg" alt="logo" height="110px" width="110px"></a>
+      
+      <button id="abrir" class="boton"><i id="menu-vertical" class="bi bi-list"></i></button>
+     
+       <nav class="nav" id="nav">
+          <button id="cerrar" class="cerrar"><i  id="menu-vertical" class="bi bi-x-lg"></i></button>
+            <ul id="menu-vertical">
+              <ul class="nav-list">
+                <li class="nav__li"><a href="sobre nosotros.html">Sobre Nosotros</a></li>
+                  <div class="jeje"><button id="desplegar" class="desplegar"><i  class="bi bi-caret-left"></i></i></button></div>
+              <ul>
+                <li class="nav__li" id="menu-vertical"><i  id="menu-vertical" ></i><a href="verano.html">Verano</a>
+                    <ul id="menu-horizontal">
+                      <li><a id="lolo" href="#">Sueteres</a></li>
+                      <li><a id="lolo" href="#">camperas</a></li>
+                      <li><a id="lolo" href="#">Buzos</a></li>
+                    </ul>
+                </li>
+              </ul>
+                  <div class="jeje"><button id="desplegar" class="desplegar"><i  class="bi bi-caret-left"></i></i></button></div>
+                <li class="nav__li"><a href="invierno.html">Invierno</a>
+                  <ul id="menu-horizontal">
+                    <li><a id="lolo" href="sueteres.html">Sueteres</a></li>
+                    <li><a id="lolo" href="camperas.html">camperas</a></li>
+                    <li><a id="lolo" href="buzos">Buzos</a></li>
+                  </ul>
+                </li>
+                  <div class="jeje"><button id="desplegar" class="desplegar"><i  class="bi bi-caret-left"></i></i></button></div>
+                <li class="nav__li"><a href="#">Peluches</a></li>
+                <div class="jeje"><button id="desplegar" class="desplegar"><i  class="bi bi-caret-left"></i></i></button></div>
+                <li class="nav__li"><a href="colecciones.html">Colecciones</a>
+                  <ul id="menu-horizontal">
+                    <li><a id="lolo" href="Taylor Swift.html">Taylor Swift</a></li>
+                    <li><a id="lolo" href="Sanvalentin.html">San Valentin</a></li>
+                    <li><a id="lolo" href="#">Disney</a></li>
+                    <li><a id="lolo" href="#">Dia de la madre</a></li>
+                    <li><a id="lolo" href="#">Dia del amigo</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </ul>
+         </nav>
+         <script>
+          const nav = document.querySelector("#nav");
+          const abrir = document.querySelector("#abrir");
+          const cerrar = document.querySelector("#cerrar");
+          
+          abrir.addEventListener("click", () => {
+              nav.classList.add("visible");
+          })
+          
+          cerrar.addEventListener("click", () => {
+              nav.classList.remove("visible");
+          })
+          </script>
+      </header>
+    <main>
+        <h1>
+          Hola soy Agustina Peloso, tengo 15 años y me dedico al crochet desde el año ...., mi sueño es ser bailarina del bailando y entrar a GH, en mis tiempos libres aparte de tejer, salvo al mundo de las cucarachas.
+      </h1>
+    </main>
+        <aside class="aside">
+          <img src="aside.jpg" alt="foto">
+        </aside>
+        <footer>
+          <ul class="contacto">
+            <div class="footer-row">
+              <h3>Mis redes sociales:</h3>
+              <div class="contenido">
+              <ul>
+                <li><a target="_blank" href="https://www.instagram.com/aguscrochets/"><i id="iconos" class="fab fa-instagram"></i></li>
+                <li><a target="_blank" href="https://www.tiktok.com/aguscrochets/"><i id="iconos" class="fab fa-tiktok"></i></a></li>
+              </ul>
+            </div>
+            <div class="contenido">
+              <ul>
+                <li class="numero"><h4>Mi Número:</h4><br><a class="telefono" href="tel:+54 11 2870-0737">+54 11 2870-0737</a></li>
+              </ul>
+            </div>
+          </ul>
+         </footer>
+       
+</body>
+</html>

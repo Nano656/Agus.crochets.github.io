@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<title>Agus.Crochets</title>
+    <style>
+ * {
+   font-family:'sen', sans-serif;
+   font-weight:100 ;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   list-style: none;
+ }
+  header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: rgb(110, 69, 145)
+  }
+ body{
+    background-color: rgb(112, 62, 153);
+    background-size: cover;
+    display: flex;
+    flex-direction:column ;
+    min-height: 100vh;
+ }
+ .boton{
+  display: none;
+ }
+ 
+.nav-list{
+  list-style-type:none ;
+  display: flex;
+  gap:1.8rem ;
+}
+
+.nav__li:hover {
+    color: #000000;
+}
+
+.nav__li:hover a{
+  color: #ffaf04;
+
+}
+.nav__li a{
+  color: #ffc400;
+  text-decoration: none;
+}
+.boton,
+.cerrar{
+  display: none;
+}
+.jeje, #desplegar{
+ display: none;
+ background-color: none;
+ border: none;
+ height: 20px;
+}
+.jeje{
+  background-color: #ffaf04;
+}
+#menu-horizontal{
+  display: none;
+}
+
+@media screen and (max-width:1920px)  {
+  .nav{
+  display: inline-flex;
+  position: relative;
+  right: 800px;
+  font-size: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+}
+@media screen and (min-width:0px) {
+.nav{
+  display: inline-flex;
+  position: relative;
+  right:70vh;
+  padding: 0px 0px 0px;
+  font-size: 20px;
+  overflow: hidden;
+}
+#filtrar{
+      left:18px;
+      font-size: 4px;
+      box-sizing: border-box;
+      display: inline-flex;
+      position: relative;
+      border: 0;
+}
+}
+
+@media screen and (max-width:1000px) {
+  .boton,
+  .cerrar{
+   display: block;
+   border: 0;
+   font-size: 20px;
+   background: transparent;
+   cursor: pointer;
+  }
+  .jeje, #desplegar li:hover #menu-horizontal{
+ background-color: rgb(110, 69, 145);
+ border: 0;
+ height: 10px;
+ padding-right: 6px;
+ padding-top:15px ;
+ padding-left:17px; 
+ width: 120px;
+ display: flex;
+ cursor: pointer;
+ font-size: 19px;
+}
+#menu-vertical{
+            list-style: none;
+            display: list-item;
+            justify-content: space-around;
+           padding: 0 px;
+        }
+#menu-vertical > li > a{
+        display: block;
+        padding: 15px 20px;
+        color: #fff;
+        text-decoration: none;
+     }
+#menu-vertical >li:hover{
+    background-color: red;
+     }
+#menu-horizontal{
+        position: absolute;
+        display: none;
+        list-style: none;
+        width: 200px;
+        background-color: rgb(110, 69, 145);
+        padding-left: 87px;
+     }
+#menu-vertical li:hover #menu-horizontal{
+        display: block;
+        right: 1rem;
+     }
+.jeje:hover #menu-horizontal  {
+  background-color: rgb(110, 69, 145); 
+  display: flex;
+}
+  .nav{
+    opacity: 0;
+    visibility: hidden;
+  }
+  .nav{
+    display: flex;
+    flex-direction:column ;
+    align-items: end;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    bottom: 0px;
+    background-color: rgb(110, 69, 145);
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    gap:1rem;
+    font-size: 20px;
+  }
+  .nav.visible{
+    opacity: 1;
+    visibility: visible;
+
+  }
+  .nav-list{
+    flex-direction: column;
+    align-items: flex-end;
+    
+  }
+  .nav-list li a{
+    color: #ffc400;
+  }
+  #lolo {
+   padding-right: 0px;
+    box-sizing: border-box;
+      display: inline-block;
+      position: inherit;
+    color: #000;
+    text-decoration: underline 2px rgb(161, 25, 214);
+    font-size: 18px;
+    width: max-content;
+  }
+  
+  body{
+    overflow: none;
+    width: 100%;
+  }
+  }
+
+  aside{
+  padding-right: 4rem;
+  padding-left: 3px;
+  }
+  .hehe{
+    display: none;
+  }
+  ul a, h3, h4{
+    text-align: start;
+    text-decoration: none;
+    color: #000;
+    display: grid;
+  }
+  h3{
+    border-bottom: solid 2px #ffaf04;
+    font-size: 20px;
+    height: 26px; 
+
+  }
+  footer{
+    height: 100%;
+    width: 100%;
+   margin-top: auto;
+    text-align: center;
+    padding: 4px 0;
+    bottom: 0;
+    background-color: rebeccapurple;
+  }
+ 
+  .contacto{
+    padding-left: 10px;
+    display: column;
+  }
+  .footer-row{
+    display: flex;
+    color: red;
+    flex-wrap: wrap;
+  }
+  .contenido{
+    width: 150px;
+    padding: 10px 5px 0px 0px; 
+    display: flex;
+    gap: 20px;
+    
+  }
+  .contenido h4{
+    font-size: 20px;
+    border-bottom: 2px solid #ffaf04;
+  }
+  .numero{
+    display:flex;
+    width: 200%; 
+  }
+  .telefono{
+    display: flex;
+    align-items: center;
+    }
+    #iconos{
+      font-size: 20px;
+    }
+    #filtrar{
+      padding-left: 18px;
+      font-size: 4px;
+      box-sizing: border-box;
+      display: inline-flex;
+      position: initial;
+      border: 0;
+       }
+    .filtrar1{
+      background-color:#fde7ab;
+      border: none;
+      font-size: 15px;
+    } 
+
+    .filtrar{
+      background-color: #fde7ab;
+    }
+        .filtrar,p{
+      color:rgb(0, 0, 0);
+      border: none;
+    }
+    hr{
+      color:red
+    }
+    .conteiner-productos{
+        display: grid;  
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;}
+
+    .productos{
+        border-radius: 10px;
+    }
+    .productos:hover{
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    }
+    .info-prod{
+      padding: 15px 30px;
+      line-height: 2;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 10px;
+    } 
+  
+    .img-prod{
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+      transition: all .5s;
+    }
+    .productos figure{
+      overflow: hidden;
+    }
+    .productos:hover img{
+      transform: scale(1.2);
+    }
+    .precio{
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .info-prod button{
+      border: none;
+      background: none;
+      background-color: #000;
+      color: #fff;
+      padding: 15px 10px;
+      cursor: pointer;
+    }
+    .icon-cart{    
+      display: flex;
+      box-sizing: content-box;
+      position: initial;
+      right: 0;
+      height: 45px;
+      stroke: #000;
+      padding-left: 94.5%;
+      padding-bottom: 0 ;
+    }
+    .conteiner-count-product{
+      display: flex;
+      box-sizing: content-box;
+      position: initial;
+      padding-left: 95%;
+      color: white;
+      width: 50px;
+      height: 1px;
+      justify-content: center;
+      align-items: center;
+      padding-top: 0;      
+    }
+    .count-product{
+      box-sizing: border-box;
+      position: initial;
+      background-color: #ce0000;
+      color: white;
+      width: 25px;
+      height: 25px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px red solid;
+    }
+    .conteiner-icon{
+        position: inherit;
+        bottom: 0px;
+      }
+        
+    .conteiner-cart-products{
+      position: absolute;
+      top: 24.15%;
+      background-color: #fff;
+      width: 400px;
+      right: 0;
+      z-index: 1;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+      right: 30px;
+    } 
+    .cart-product{
+      display: flex;
+      padding: 30px;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+      align-items: center;
+    }  
+    .hidden-cart{
+      display: none;
+    }
+    .info-cart-product{
+      display: flex;
+      justify-content: space-between;
+      flex: 0.8;
+   }
+   .titulo-producto-carrito{
+    font-size: 20px;
+   }
+
+
+   .precio-producto-carrito{
+    font-size:20px ;
+    font-weight: 700;
+    margin-left: 10px;
+   }
+
+
+   .cantidad-producto-carrito{
+    font-weight: 900;
+    font-size: 20px;
+   }
+   .cart-total{
+    justify-content: center;
+    display: flex;
+    position: relative;
+    padding: 20px 0;
+    gap: 20px;
+    align-items: center;
+  }
+  .cart-total h3{
+    font-size: 20px;
+    font-weight: 800;
+    display: flex;
+  }
+  .total-pagar{
+    font-size: 20px;
+    font-weight: 600;
+  }
+    .icon-close{
+      width: 25px;
+      height: 25px;
+    }
+    .icon-close:hover{
+      color: red;
+      cursor: pointer;
+    }
+    @media (min-width:0px) and (max-width:1100px) {
+      .conteiner-cart-products{ 
+      position: absolute;
+      top: 24.5%;
+      background-color: #fff;
+      width: 400px;
+      right: 0;
+      z-index: 1;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+      right: 15px;
+      }
+    }
+    @media (min-width:1100px) and (max-width:1600px) {
+      .conteiner-cart-products{ 
+        position: absolute;
+      top: 24.2%;
+      background-color: #fff;
+      width: 400px;
+      right: 0;
+      z-index: 1;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+      right: 37px;
+      }
+    }
+    @media (min-width:1600px) and (max-width:1920px){
+      .conteiner-cart-products{
+      position: absolute;
+      top: 23.3%;
+      background-color: #fff;
+      width: 400px;
+      right: 0;
+      z-index: 1;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+      right: 59px;
+      } 
+    }
+    @media (width:1080px) , (height:2340px) {
+      .conteiner-cart-products{
+      position: absolute;
+      top: 2.3%;
+      background-color: #fff;
+      width: 400px;
+      right: 0;
+      z-index: 1;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+      right: 59px;
+      } 
+    }
+   
+    
+  
+
+   </style>
+</head>
+<body>
+    <header>
+      <a href="index.html"><img src="logo.jpg" alt="logo" height="110px" width="110px"></a>
+      
+      <button id="abrir" class="boton"><i id="menu-vertical" class="bi bi-list"></i></button>
+     
+       <nav class="nav" id="nav">
+          <button id="cerrar" class="cerrar"><i  id="menu-vertical" class="bi bi-x-lg"></i></button>
+            <ul id="menu-vertical">
+              <ul class="nav-list">
+                <li class="nav__li"><a href="sobre nosotros.html">Sobre Nosotros</a></li>
+                  <div class="jeje"><button id="desplegar" class="desplegar"><i  class="bi bi-caret-left"></i></i></button></div>
+              <ul>
+                <li class="nav__li" id="menu-vertical"><i  id="menu-vertical" ></i><a href="verano.html">Verano</a>
+                    <ul id="menu-horizontal">
+                      <li><a id="lolo" href="#">Sueteres</a></li>
+                      <li><a id="lolo" href="#">camperas</a></li>
+                      <li><a id="lolo" href="#">Buzos</a></li>
+                    </ul>
+                </li>
+              </ul>
+                  <div class="jeje"><button id="desplegar" class="desplegar"><i  class="bi bi-caret-left"></i></i></button></div>
+                <li class="nav__li"><a href="invierno.html">Invierno</a>
+                  <ul id="menu-horizontal">
+                    <li><a id="lolo" href="sueteres.html">Sueteres</a></li>
+                    <li><a id="lolo" href="camperas.html">camperas</a></li>
+                    <li><a id="lolo" href="buzos">Buzos</a></li>
+                  </ul>
+                </li>
+                  <div class="jeje"><button id="desplegar" class="desplegar"><i  class="bi bi-caret-left"></i></i></button></div>
+                <li class="nav__li"><a href="peluches.html">Peluches</a></li>
+                <div class="jeje"><button id="desplegar" class="desplegar"><i  class="bi bi-caret-left"></i></i></button></div>
+                <li class="nav__li"><a href="colecciones.html">Colecciones</a>
+                  <ul id="menu-horizontal">
+                    <li><a id="lolo" href="Taylor Swift.html">Taylor Swift</a></li>
+                    <li><a id="lolo" href="Sanvalentin.html">San Valentin</a></li>
+                    <li><a id="lolo" href="#">Disney</a></li>
+                    <li><a id="lolo" href="#">Dia de la madre</a></li>
+                    <li><a id="lolo" href="#">Dia del amigo</a></li>
+                  </ul>
+                </li>
+              </ul>
+              
+            </ul>
+              
+       </nav>
+    
+       
+       <script>
+        const nav = document.querySelector("#nav");
+        const abrir = document.querySelector("#abrir");
+        const cerrar = document.querySelector("#cerrar");
+
+        
+        
+        
+        abrir.addEventListener("click", () => {
+            nav.classList.add("visible");
+        })
+        
+        cerrar.addEventListener("click", () => {
+            nav.classList.remove("visible");
+        })
+        desplegar.addEventListener("click", () => {
+            h1.classList.add("visible");
+        })
+        desplegar.addEventListener("click", () => {
+            h1.classList.remove("visible");
+        })
+        redesplegar.addEventListener("click", () => {
+           h1.classList.remove("visible");
+        })
+        </script>
+        
+    </header>
+    <main>
+      <section>
+      <form id="filtrar">
+        <select class="filtrar1">
+          <option disabled selected="" class="filtrar">Filtrar</option>
+          <hr>
+          <optgroup label="Precio" class="filtrar"> 
+            </hr>
+            <hr>
+          <option class="filtrar"><p> Mayor a Menor</p></option>
+          <option class="filtrar">De Menor a Mayor</option>
+          </he>
+          <hr>
+          <optgroup label="Tipo de Tela" class="filtrar">
+            <hr>
+          <option class="filtrar">Algodon</option>
+          <option class="filtrar">Hilo</option>
+          </hr>
+          </optgroup>
+        </select>
+      </form>
+    </section>
+    <article> 
+      <div class="conteiner-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-cart">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+        </svg>
+        <div class="conteiner-count-product">
+        <div class="count-product"><span id="contador-productos">10
+          </span>
+        </div>
+      </div>
+      <div class="conteiner-cart-products hidden-cart">
+        <div class="cart-product">
+          <div class="info-cart-product">
+              <span class="cantidad-producto-carrito">1
+              </span>
+              <p class="tiulo-producto-carrito">
+             blusa</p>
+
+              <span class="precio-producto-carrito">$80</span>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+       </div>
+          <div class="cart-total">
+            <h3>total:</h3>
+            <span class="total-pagar">$30</span> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="conteiner-productos">
+      <div class="productos"> 
+          <figure>
+          <img src="logo.jpg" class="img-prod" alt="img-prod">
+          </figure>
+        <div class="info-prod"> 
+          <h2>4</h2>
+          <p class="Precio"></p>
+          <button>Añadir al carrito</button>
+        </div> 
+      </div>
+      <div class="conteiner-productos">
+        <div class="productos"> 
+          <figure><img src="logo.jpg" class="img-prod" alt="img-prod">
+          </figure>
+          <div class="info-prod"> 
+            <h2>4</h2>
+            <p class="Precio"></p>
+            <button>Añadir al carrito</button>
+          </div> 
+        </div>
+          <div class="conteiner-productos">
+            <div class="productos"> 
+              <figure><img src="logo.jpg" class="img-prod" alt="img-prod">
+              </figure>
+              <div class="info-prod"> 
+                <h2></h2>
+              <p class="Precio">4</p>
+              <button>Añadir al carrito</button>
+            </div> 
+            </div><div class="conteiner-productos">
+              <div class="productos"> 
+                <figure><img src="logo.jpg" class="img-prod" alt="img-prod">
+                </figure>
+                <div class="info-prod"> 
+                  <h2></h2>
+                <p class="Precio"></p>
+                <button>Añadir al carrito</button>
+                </div> 
+              </div><div class="conteiner-productos">
+                <div class="productos"> 
+                  <figure><img src="logo.jpg" class="img-prod" alt="img-prod">
+                  </figure>
+                  <div class="info-prod"> 
+                    <h2></h2>
+                  <p class="Precio"></p>
+                  <button>Añadir al carrito</button>
+                  </div> 
+                </div><div class="conteiner-productos">
+                  <div class="productos"> 
+                    <figure><img src="logo.jpg" class="img-prod" alt="img-prod">
+                    </figure>
+                    <div class="info-prod"> 
+                      <h2></h2>
+                    <p class="Precio"></p>
+                    <button>Añadir al carrito</button>
+                   </div> 
+             </div>
+           </div>        
+      </div>
+    </div>
+  </article>
+  <script>
+    const btnCart = document.querySelector('.conteiner-icon')
+    const containerCartProducts = document.querySelector('.conteiner-cart-products')
+
+
+    btnCart.addEventListener('click', () => { 
+      containerCartProducts.classList.toggle
+      ('hidden-cart')
+      })
+  </script>
+    </main>
+     <footer>
+    <ul class="contacto">
+      <div class="footer-row">
+        <h3>Mis redes sociales:</h3>
+        <div class="contenido">
+        <ul>
+          <li><a target="_blank" href="https://www.instagram.com/aguscrochets/"><i id="iconos" class="fab fa-instagram"></i></li>
+          <li><a target="_blank" href="https://www.tiktok.com/aguscrochets/"><i id="iconos" class="fab fa-tiktok"></i></a></li>
+        </ul>
+      </div>
+      <div class="contenido">
+        <ul>
+          <li class="numero"><h4>Mi Número:</h4><br><a class="telefono" href="tel:+54 11 2870-0737">+54 11 2870-0737</a></li>
+        </ul>
+      </div>
+    </ul>
+   </footer>
+</body>
+</html>
